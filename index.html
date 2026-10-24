@@ -16,17 +16,17 @@
 
   <style>
     :root{
-      --teal:#0f4c4c;
-      --teal2:#0a3535;
-      --teal3:#073030;
-      --coral:#ff5c3a;
-      --coral2:#ff7a5c;
-      --cream:#faf7f2;
-      --cream2:#f0ebe0;
-      --cream3:#e8e0d0;
-      --text:#1a1a1a;
-      --text2:#444444;
-      --text3:#888888;
+      --teal:#1a1a6e;
+      --teal2:#13136b;
+      --teal3:#0d0d4a;
+      --coral:#25D366;
+      --coral2:#1ebe5d;
+      --cream:#f8f8ff;
+      --cream2:#ededfa;
+      --cream3:#d5d5f5;
+      --text:#0d0d2b;
+      --text2:#3a3a5c;
+      --text3:#7a7aaa;
       --white:#ffffff;
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -56,7 +56,7 @@
     .fgroup input:focus,.fgroup select:focus{border-color:var(--teal);background:rgba(15,76,76,0.04);}
     .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
     .form-send-btn{width:100%;padding:14px;background:var(--coral);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:12px;cursor:pointer;margin-top:8px;transition:all 0.3s;letter-spacing:0.3px;}
-    .form-send-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,92,58,0.4);background:var(--coral2);}
+    .form-send-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);background:var(--coral2);}
     .form-send-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
     .form-status{text-align:center;font-size:12px;margin-top:10px;min-height:16px;color:var(--teal);}
 
@@ -76,8 +76,10 @@
     .hero-pill strong{color:var(--coral);font-weight:700;}
     .hero-cta{animation:up 0.9s 0.4s ease both;}
     .btn-coral{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--coral);color:var(--white);font-size:16px;font-weight:700;padding:17px 36px;border-radius:100px;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.3s;letter-spacing:0.3px;width:100%;max-width:420px;}
-    .btn-coral:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(255,92,58,0.45);background:var(--coral2);}
+    .btn-coral:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(37,211,102,0.45);background:var(--coral2);}
     @keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes shake{0%,100%{transform:translateX(0);}15%,45%,75%{transform:translateX(-5px);}30%,60%,90%{transform:translateX(5px);}}
+    .btn-coral,.btn-wa,.form-send-btn{animation:shake 3.5s ease-in-out infinite;}
 
     /* SECTION BASE */
     .sec-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
@@ -173,7 +175,7 @@
     .save-num{display:flex;align-items:center;gap:10px;background:rgba(37,211,102,0.08);border:1.5px solid rgba(37,211,102,0.2);border-radius:12px;padding:10px 16px;margin-bottom:16px;}
     .save-num span{font-size:14px;color:var(--text);font-weight:600;}
     .btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--coral);color:var(--white);font-size:16px;font-weight:700;padding:17px;border-radius:100px;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;width:100%;margin-bottom:14px;transition:all 0.3s;}
-    .btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,92,58,0.4);background:var(--coral2);}
+    .btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,0.45);background:var(--coral2);}
     .expect{background:var(--white);border-radius:14px;padding:18px;}
     .expect-title{font-size:13px;color:var(--text3);margin-bottom:10px;}
     .expect-row{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text2);padding:7px 0;border-bottom:1.5px solid var(--cream2);}
@@ -249,26 +251,20 @@
   <div class="hero-tag"><div class="tag-blink"></div>Digital Skills Coach</div>
   <h1 class="hero-h"><span class="counter coral" data-target="100000" data-suffix="+">0+</span> Lives Transformed</h1>
   <p class="hero-sub">Stop dreaming about financial freedom — start building it. Real skills, real income, real results.</p>
-  <div class="hero-pills">
-    <!-- CHANGE: numbers -->
-    <div class="hero-pill"><strong class="counter" data-target="2000" data-suffix="+">0+</strong> Students Trained</div>
-    <div class="hero-pill"><strong class="counter" data-target="100000" data-prefix="₹" data-suffix="+">₹0+</strong> Monthly Income</div>
-    <div class="hero-pill"><strong class="counter" data-target="3" data-suffix="+">0+</strong> Years of Mentoring</div>
-  </div>
   <div class="hero-arc"></div>
 </section>
 
 <!-- JOURNEY -->
 <section class="journey-sec">
+  <div style="text-align:center;margin-bottom:20px;" class="sr">
+    <button class="btn-coral" style="margin:0 auto;" onclick="openFormModal('Connect Button')">📲 Connect on WhatsApp</button>
+  </div>
   <p class="sec-label" style="text-align:center">My Story</p>
   <h2 class="sec-h" style="text-align:center">See My <em>Journey</em></h2>
   <p class="sec-p" style="text-align:center;max-width:440px;margin:0 auto">From a complete beginner to building India's most dedicated skills community — here's my story.</p>
   <div class="journey-frame sr">
     <!-- CHANGE: replace JOURNEY_IMAGE_URL with imgbb Direct Link -->
     <img src="https://i.ibb.co/n8t0gqkH/Whats-App-Image-2026-09-21-at-19-53-34.jpg" alt="My Journey" onerror="this.parentElement.innerHTML='<div class=journey-ph>📸 Add your image URL</div>'"/>
-  </div>
-  <div style="text-align:center;margin-top:24px;" class="sr">
-    <button class="btn-coral" style="margin:0 auto;" onclick="openFormModal('Connect Button')">📲 Connect on WhatsApp</button>
   </div>
 </section>
 
